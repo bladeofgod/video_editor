@@ -257,19 +257,25 @@ class TrimSliderPainter extends CustomPainter {
       ..strokeWidth = style.positionLineWidth;
 
     // DRAW VIDEO INDICATOR
-    canvas.drawRRect(
-      RRect.fromRectAndRadius(
-        Rect.fromPoints(
-          Offset(position - style.positionLineWidth / 2, -style.lineWidth * 2),
-          Offset(
-            position + style.positionLineWidth / 2,
-            size.height + style.lineWidth * 2,
-          ),
+    final rRect = RRect.fromRectAndRadius(
+      Rect.fromPoints(
+        Offset(position - style.positionLineWidth / 2, -style.lineWidth * 2),
+        Offset(
+          position + style.positionLineWidth / 2,
+          size.height + style.lineWidth * 2,
         ),
-        Radius.circular(style.positionLineWidth),
       ),
+      Radius.circular(style.positionLineWidth),
+    );
+    canvas.drawRRect(
+      rRect,
       progress,
     );
+    // draw border
+    progress..style = PaintingStyle.stroke
+    ..color = style.positionBorderColor
+    ..strokeWidth = style.positionBorderWidth;
+    canvas.drawRRect(rRect, progress);
   }
 
   void paintIcons(

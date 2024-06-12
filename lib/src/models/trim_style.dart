@@ -22,6 +22,8 @@ class TrimSliderStyle {
     this.iconSize = 16,
     this.leftIcon = Icons.arrow_back_ios_rounded,
     this.rightIcon = Icons.arrow_forward_ios_rounded,
+    this.positionBorderColor = Colors.black,
+    this.positionBorderWidth = 1,
     this.rectIconWidth
   }) : edgesSize = edgesSize ?? (edgesType == TrimSliderEdgesType.bar ? 10 : 8);
 
@@ -34,6 +36,12 @@ class TrimSliderStyle {
   ///
   /// Defaults to [Colors.white]
   final Color positionLineColor;
+
+  ///边框颜色
+  final Color positionBorderColor;
+
+  ///边框宽度
+  final double positionBorderWidth;
 
   /// The [positionLineWidth] param specifies the width  of the line showing the video position
   ///
