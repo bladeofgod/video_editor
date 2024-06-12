@@ -89,6 +89,15 @@ class _VideoEditorState extends State<VideoEditor> {
     widget.file,
     minDuration: const Duration(seconds: 1),
     maxDuration: const Duration(seconds: 10),
+    trimStyle: TrimSliderStyle(
+        background: Colors.transparent,
+        onTrimmingColor: Colors.yellow,
+        onTrimmedColor: Colors.yellow,
+        rectIconWidth: 4,
+        iconColor: Colors.black,
+        iconSize: 20,
+        positionLineWidth: 3,
+        positionLineColor: Colors.white)
   );
 
   @override

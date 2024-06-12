@@ -22,6 +22,7 @@ class TrimSliderStyle {
     this.iconSize = 16,
     this.leftIcon = Icons.arrow_back_ios_rounded,
     this.rightIcon = Icons.arrow_forward_ios_rounded,
+    this.rectIconWidth
   }) : edgesSize = edgesSize ?? (edgesType == TrimSliderEdgesType.bar ? 10 : 8);
 
   /// The [background] param specifies the color of the paint area outside the trimmed area
@@ -94,6 +95,10 @@ class TrimSliderStyle {
   ///
   /// Defaults to [Icons.arrow_forward_ios_rounded]
   final IconData? rightIcon;
+
+  ///矩形icon的宽度， 高度等于[iconSize]
+  ///如果此值不为空，则[leftIcon]和[rightIcon] 将失效
+  final double? rectIconWidth;
 
   /// Returns left and right line width depending on [edgesType]
   double get edgeWidth =>

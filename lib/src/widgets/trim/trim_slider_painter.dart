@@ -277,6 +277,20 @@ class TrimSliderPainter extends CustomPainter {
     required Offset centerLeft,
     required Offset centerRight,
   }) {
+
+    if(style.rectIconWidth != null) {
+      final width = style.rectIconWidth!;
+      final height = style.iconSize;
+      final rectPaint = Paint()
+        ..style = PaintingStyle.fill
+        ..color = style.iconColor;
+      //left icon
+      canvas.drawRect(Rect.fromCenter(center: centerLeft, width: width, height: height), rectPaint);
+      //right icon
+      canvas.drawRect(Rect.fromCenter(center: centerRight, width: width, height: height), rectPaint);
+
+      return;
+    }
     final halfIconSize = Offset(style.iconSize / 2, style.iconSize / 2);
 
     // LEFT ICON
